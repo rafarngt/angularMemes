@@ -10,6 +10,10 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 // Rutas
 import { RouteModule } from './route/route.module';
 
+// Bootstrap
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +23,8 @@ import { RouteModule } from './route/route.module';
   ],
   imports: [
     BrowserModule,
-    RouteModule
+    RouteModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   schemas: [
