@@ -1,28 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule ,  NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
-
+// Componentes
 import { AppComponent } from './app.component';
-import { DashboadComponent } from './components/pages/dashboad/dashboad.component';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
+// Rutas
+import { RouteModule } from './route/route.module';
+
+// Bootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboadComponent,
+    DashboardComponent,
     HeaderComponent,
     FooterComponent
   ],
   imports: [
-    BrowserModule
-    , MDBBootstrapModule.forRoot()
+    BrowserModule,
+    RouteModule,
+    MDBBootstrapModule.forRoot()
   ],
-  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
