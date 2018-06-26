@@ -14,6 +14,8 @@ import { RouteRoutingModule } from './route/route-routing.module';
 // Bootstrap
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     BrowserModule,
     RouteRoutingModule,
     MDBBootstrapModule.forRoot()
+    , HttpClientModule
   ],
   providers: [],
   schemas: [
