@@ -10,6 +10,6 @@ export class DashboadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

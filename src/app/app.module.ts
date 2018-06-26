@@ -9,6 +9,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   imports: [
     BrowserModule
     , MDBBootstrapModule.forRoot()
+    , HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
