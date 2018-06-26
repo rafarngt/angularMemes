@@ -10,11 +10,11 @@
     <ul class="navbar-nav mr-auto">
 
       <!-- active -->
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" >Home</a>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/dashboard']" >Home</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link">Mis MEMES favoritos</a>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/favorites']" >Mis MEMES favoritos</a>
       </li>
     </ul>
 
