@@ -1,10 +1,10 @@
 <h1>Trending MEME</h1>
 
-<div class="cards-content" *ngFor="let item of img">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="../assets/{{item.id}}.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h3 class="card-text">{{item.name}}</h3>
+<div class="cards-content" *ngFor="let item of memes">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{item.images.fixed_height_downsampled.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card-text">{{item.title}}</h3>
+        </div>
     </div>
-  </div>
 </div>

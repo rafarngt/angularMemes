@@ -9,5 +9,8 @@ export class ProxyService {
     return this._baseUrl + 'search';
   }
 
+  get trending() {
+    return this._baseUrl + 'trending';
+   }
 
 }

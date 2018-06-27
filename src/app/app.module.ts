@@ -16,6 +16,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { HttpClientModule } from '@angular/common/http';
 
+// Servicios
+import { ProxyService } from './services/proxy.service';
+import { SearchService } from './services/search/search.service';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     MDBBootstrapModule.forRoot()
     , HttpClientModule
   ],
-  providers: [],
+  providers: [ProxyService, SearchService],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
