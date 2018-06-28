@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   apiKey: 'diiHVLCvuIpg4oEexX8CSXkMKU2zmW8I',
-  baseUrl: 'http://api.giphy.com/v1/gifs/',
+  baseUrl: 'https://api.giphy.com/v1/gifs/',
   limit: '20'
 };
