@@ -28,12 +28,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    console.log('init');
     this._searchService.changeTranding();
+
   }
   ngOnDestroy(): void {
     this.subcription.unsubscribe();
   }
-
 
 
 }
