@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SearchService } from '../../../services/search/search.service';
 import { Memes } from '../../../models/memes.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
+  subcription: Subscription;
   memes: Memes[];
   img: any = [
 { id: 0, name: 'Doge Dog'}
@@ -22,19 +24,16 @@ export class DashboardComponent implements OnInit {
 , { id: 4, name: 'Success Kid'}
 ];
   constructor(
-    private _searchService: SearchService
+    public _searchService: SearchService
   ) { }
 
   ngOnInit() {
-    this.changeTranding();
+    this._searchService.changeTranding();
+  }
+  ngOnDestroy(): void {
+    this.subcription.unsubscribe();
   }
 
-  changeTranding() {
-    this._searchService.trending().subscribe(response => {
-      console.log(response);
-      this.memes = response;
 
-    });
-  }
 
 }

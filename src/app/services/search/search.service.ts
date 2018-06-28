@@ -8,9 +8,12 @@ import { environment } from '../../../environments/environment';
 import { Memes } from '../../models/memes.model';
 
 
-@Injectable()
+
+@Injectable({
+  providedIn: 'root',
+})
 export class SearchService {
-  memes: Memes[];
+  public memes: Memes[];
   constructor(private http: HttpClient, private _proxyService: ProxyService) {}
 
   public trending() {
@@ -20,15 +23,34 @@ export class SearchService {
     return this.http
       .get(this._proxyService.trending, { params: params })
        .pipe(
-          map( (resp: any) => this.memes = resp.data
+          map( (resp: any) => resp.data
        ));
   }
 
   public search(param): Observable<any> {
     const params = new HttpParams()
-      .set('q', param.search)
+      .set('q', param)
       .set('api_key', environment.apiKey)
       .set('limit', environment.limit);
-    return this.http.get(this._proxyService.searchUrl, { params: params });
+    return this.http.get(this._proxyService.searchUrl, { params: params })
+    .pipe(
+      map( (resp: any) => resp.data
+   ));
   }
+
+  changeTranding() {
+     this.trending().subscribe(response => {
+       console.log(response);
+       this.memes = response;
+     });
+   }
+
+  changeSearch( search: string) {
+     this.search(search).subscribe(response => {
+      console.log(response);
+      this.memes = response;
+
+    });
+  }
+
 }

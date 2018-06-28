@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // Componentes
@@ -31,6 +32,8 @@ import { SearchService } from './services/search/search.service';
   imports: [
     BrowserModule,
     RouteRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
     , HttpClientModule
   ],

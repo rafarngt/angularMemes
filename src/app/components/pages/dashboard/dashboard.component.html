@@ -1,6 +1,6 @@
 <h1>Trending MEME</h1>
 
-<div class="cards-content" *ngFor="let item of memes">
+<div class="cards-content" *ngFor="let item of _searchService.memes">
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{item.images.fixed_height_downsampled.url}}" alt="Card image cap">
         <div class="card-body">
